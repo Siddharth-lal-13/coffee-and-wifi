@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    {% block styles %}
+    <!-- Load Bootstrap-Flask CSS here -->
+      {{ bootstrap.load_css() }}
+    <!-- Link to the styles.css here to apply styling to all the child templates.-->
+
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+
+    {% block scripts %}
+            <!-- Optional JavaScript -->
+            {{ bootstrap.load_js() }}
+    {% endblock %}
+
+    <footer class="py-3 my-4">
+    <p class="text-center text-body-secondary">© 2024, SIDDHARTH LAL</p>
+    </footer>
+  </body>
+</html>
